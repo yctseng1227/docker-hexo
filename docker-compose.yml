@@ -1,0 +1,17 @@
+version: '3.7'
+
+services: 
+  hexo:
+    build: ./hexo
+    image: 'docker-hexo'
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./hexo/workspace:/root/hexo-site/
+      - /root/.ssh:/root/.ssh/:ro
+    ports:
+      - '0.0.0.0:1222:22'
+      - '0.0.0.0:4000:4000'
+    restart: unless-stopped
+    container_name: 'hexo'
