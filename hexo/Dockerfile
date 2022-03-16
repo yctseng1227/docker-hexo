@@ -1,4 +1,4 @@
-From node:16.14-bullseye
+FROM node:12.22-bullseye
 
 MAINTAINER Cyris Tseng <gene26620560@gmail.com>
 
@@ -13,7 +13,6 @@ RUN \
     echo 'root:hexo' | chpasswd
 
 WORKDIR /root/hexo-site
-
 RUN \
     npm install -g hexo-cli && \
     hexo init

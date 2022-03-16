@@ -8,7 +8,6 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - ./hexo/workspace:/root/hexo-site/
       - /root/.ssh:/root/.ssh/:ro
     ports:
       - '0.0.0.0:1222:22'
